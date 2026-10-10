@@ -25,8 +25,8 @@ const base: Project[] = [
     tech: ['Flutter', 'Dart', 'Python'],
     featured: true,
     gallery: fitness,
-    repo: 'https://github.com/anik904/AI-Powered-Fitness-Tracking-Application',
-    links: [{ label: 'Backend', url: 'https://github.com/anik904/AI-Powered-Fitness-Tracking-Application-backend' }],
+    repo: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application',
+    links: [{ label: 'Backend', url: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application-backend' }],
   },
   {
     slug: 'agency-website',
@@ -35,7 +35,7 @@ const base: Project[] = [
     description: ['A one-page landing website for a digital agency, built with HTML, CSS and Bootstrap.'],
     type: 'Web',
     tech: ['HTML', 'CSS', 'Bootstrap'],
-    repo: 'https://github.com/anik904/Bootstrap_project-Agency-Website',
+    repo: 'https://github.com/shahriarmahmudanik/Bootstrap_project-Agency-Website',
   },
   {
     slug: 'official-portfolio',
@@ -44,7 +44,7 @@ const base: Project[] = [
     description: ['My earlier personal portfolio website, built with HTML and CSS before this React version.'],
     type: 'Web',
     tech: ['HTML', 'CSS'],
-    repo: 'https://github.com/anik904/My_Official_Portifolio',
+    repo: 'https://github.com/shahriarmahmudanik/My_Official_Portifolio',
   },
   {
     slug: 'digital-cv',
@@ -53,7 +53,7 @@ const base: Project[] = [
     description: ['A CV presented as a web page, so it can be shared with a single link.'],
     type: 'Web',
     tech: ['HTML', 'CSS'],
-    repo: 'https://github.com/anik904/My-Digital-CV',
+    repo: 'https://github.com/shahriarmahmudanik/My-Digital-CV',
   },
   {
     slug: 'one-page-template',
@@ -62,7 +62,7 @@ const base: Project[] = [
     description: ['A reusable one-page website template that can be adapted for different small businesses.'],
     type: 'Web',
     tech: ['HTML'],
-    repo: 'https://github.com/anik904/One-Page-tamplate-website',
+    repo: 'https://github.com/shahriarmahmudanik/One-Page-tamplate-website',
   },
   {
     slug: 'database-project',
@@ -71,7 +71,7 @@ const base: Project[] = [
     description: ['A database-driven project completed as part of my university studies.'],
     type: 'Software',
     tech: ['Python', 'SQL'],
-    repo: 'https://github.com/anik904/Database_Project_Final',
+    repo: 'https://github.com/shahriarmahmudanik/Database_Project_Final',
   },
   {
     slug: 'resume',
@@ -80,7 +80,7 @@ const base: Project[] = [
     description: ['A styled online version of my resume.'],
     type: 'Web',
     tech: ['CSS'],
-    repo: 'https://github.com/anik904/My_Resume',
+    repo: 'https://github.com/shahriarmahmudanik/My_Resume',
   },
   // TODO (you): the two samples below are placeholders to show the categories - replace or delete them.
   {

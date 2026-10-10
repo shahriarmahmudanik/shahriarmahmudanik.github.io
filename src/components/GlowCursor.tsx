@@ -7,18 +7,18 @@ export function GlowCursor() {
   const y = useMotionValue(-100)
   const sx = useSpring(x, { damping: 50, stiffness: 700 })
   const sy = useSpring(y, { damping: 50, stiffness: 700 })
-  const [enabled, setEnabled] = useState(false)
+  // Mouse-like pointers only; phones and tablets get no cursor.
+  const [enabled] = useState(() => !!window.matchMedia?.('(hover: hover) and (pointer: fine)').matches)
 
   useEffect(() => {
-    if (!window.matchMedia?.('(hover: hover) and (pointer: fine)').matches) return
-    setEnabled(true)
+    if (!enabled) return
     const move = (e: MouseEvent) => {
       x.set(e.clientX - 16)
       y.set(e.clientY - 16)
     }
     window.addEventListener('mousemove', move)
     return () => window.removeEventListener('mousemove', move)
-  }, [x, y])
+  }, [enabled, x, y])
 
   if (!enabled) return null
   return (

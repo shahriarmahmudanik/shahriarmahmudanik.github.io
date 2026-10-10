@@ -6,7 +6,7 @@ export const profile: Profile = {
   jobTitle: 'Web Developer',
   location: 'Cardiff, United Kingdom',
   email: 'shahriarmahmud904@gmail.com',
-  githubUser: 'anik904',
+  githubUser: 'shahriarmahmudanik',
   roles: ['Web Developer', 'Front-End Developer', 'WordPress Theme & Plugin Developer'],
   intro:
     "I'm Shahriar Mahmud Anik, a web developer based in Cardiff. I build fast, custom-coded websites with WordPress and JavaScript, and I'm growing into React and TypeScript while studying for an MSc in Advanced Computer Science at the University of South Wales.",
@@ -66,7 +66,7 @@ export const profile: Profile = {
     },
   ],
   links: [
-    { label: 'GitHub', url: 'https://github.com/anik904' },
+    { label: 'GitHub', url: 'https://github.com/shahriarmahmudanik' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/sm-anik/' },
     { label: 'Instagram', url: 'https://www.instagram.com/shahriar_mahmud_anik/' },
     { label: 'Facebook', url: 'https://www.facebook.com/shahriarmahmud.anik' },
