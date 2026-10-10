@@ -6,6 +6,8 @@ import type { Project } from '../types'
 // Preview pictures live in src/assets/projects/<slug>.svg - drop a real screenshot there (same name) to replace a dummy one.
 const images = import.meta.glob<string>('../assets/projects/*.svg', { eager: true, query: '?url', import: 'default' })
 const imageFor = (slug: string) => images[`../assets/projects/${slug}.svg`]
+const shots = import.meta.glob<string>('../assets/projects/shots/*.jpg', { eager: true, query: '?url', import: 'default' })
+const shot = (slug: string) => shots[`../assets/projects/shots/${slug}.jpg`]
 const fitness = Object.entries(
   import.meta.glob<string>('../assets/projects/fitness/*.jpg', { eager: true, query: '?url', import: 'default' }),
 )
@@ -27,6 +29,32 @@ const base: Project[] = [
     gallery: fitness,
     repo: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application',
     links: [{ label: 'Backend', url: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application-backend' }],
+  },
+  {
+    slug: 'seek-spirituality',
+    title: 'Seek Spirituality',
+    summary: 'A client website for a spiritual business coaching brand, with services, blog and shop.',
+    description: [
+      'A website I built for a client who combines business expertise with spiritual practice. It presents their services, benefits and blog, and includes a shop with a cart.',
+      'Built on WordPress with a custom look matched to the brand: a gold and midnight-blue palette and a full-width hero.',
+    ],
+    type: 'WordPress',
+    tech: ['WordPress', 'E-commerce', 'CSS'],
+    image: shot('seek-spirituality'),
+    live: 'https://seekspirituality.com/',
+  },
+  {
+    slug: 'ai-alchemy',
+    title: 'AI Alchemy',
+    summary: 'A client website for an AI content-systems business, with services, blog and shop.',
+    description: [
+      'A website I built for a client offering done-for-you AI systems to help business owners scale. It covers services, a resource shop (the Alchemy Vault), a blog and a contact page.',
+      'Built on WordPress with a dark and gold design, a cookie-consent banner and a cart for the shop.',
+    ],
+    type: 'WordPress',
+    tech: ['WordPress', 'E-commerce', 'CSS'],
+    image: shot('ai-alchemy'),
+    live: 'https://ai-alchemy.co.uk/',
   },
   {
     slug: 'agency-website',
@@ -82,26 +110,89 @@ const base: Project[] = [
     tech: ['CSS'],
     repo: 'https://github.com/shahriarmahmudanik/My_Resume',
   },
-  // TODO (you): the two samples below are placeholders to show the categories - replace or delete them.
   {
-    slug: 'sample-wordpress-theme',
-    title: 'Sample WordPress Theme',
-    summary: 'Placeholder: a custom WordPress theme.',
-    description: ['Placeholder project. Replace with a real WordPress theme or plugin you built.'],
+    slug: 'hvac-websites',
+    title: 'HVAC Websites with WordPress',
+    summary: 'A family of WordPress sites for HVAC and building-services companies in Bangladesh.',
+    description: [
+      'Websites built with WordPress to give potential clients information and resources about HVAC systems and services.',
+      'I wrote custom code in HTML, CSS, Bootstrap and JavaScript where the page builders fell short, and optimised each site for mobile responsiveness and user interaction.',
+    ],
     type: 'WordPress',
-    tech: ['PHP', 'WordPress', 'CSS'],
+    tech: ['WordPress', 'HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    gallery: ['hvac-bangladesh', 'hvac-chittagong', 'air-condition-bd', 'chiller-bd', 'tritech'].map(shot),
+    live: 'https://hvacbangladesh.com/',
+    links: [
+      { label: 'HVAC Chittagong', url: 'https://hvacchittagong.com/' },
+      { label: 'Air Condition BD', url: 'https://aircondition.com.bd/' },
+      { label: 'Chiller BD', url: 'http://chiller.com.bd/' },
+      { label: 'Tritech BD', url: 'https://www.tritechbd.com/' },
+    ],
   },
   {
-    slug: 'sample-react-dashboard',
-    title: 'Sample React Dashboard',
-    summary: 'Placeholder: a React and TypeScript dashboard.',
-    description: ['Placeholder project. Replace with a real React app you built.'],
-    type: 'React',
-    tech: ['React', 'TypeScript'],
+    slug: 'ecommerce-google-sites',
+    title: 'E-commerce Website with Google Sites',
+    summary: 'A fashion storefront (Hawkerr) built on Google Sites.',
+    description: [
+      'An e-commerce website built with Google Sites to sell a variety of products to customers worldwide.',
+      "I designed and customised the site's layout, themes and templates to improve the user experience and brand recognition.",
+    ],
+    type: 'Web',
+    tech: ['Google Sites', 'UI design'],
+    image: shot('ecommerce'),
+    live: 'https://sites.google.com/view/hawkerr/home',
+  },
+  {
+    slug: 'cafe-shop-website',
+    title: 'Cafe Shop Website',
+    summary: 'A responsive cafe website with a PHP and MySQL back end.',
+    description: [
+      'I designed the front end with HTML, CSS and JavaScript to give customers a responsive, easy-to-use experience.',
+      'The back end is written in PHP to handle the business logic, with MySQL managing the database and tuned for performance.',
+    ],
+    type: 'Web',
+    tech: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    repo: 'https://github.com/shahriarmahmudanik/Cafe_Shop_Project',
+  },
+  {
+    slug: 'weather-website',
+    title: 'Weather Website',
+    summary: 'Search weather conditions for any location using the OpenWeatherMap API.',
+    description: [
+      'A weather website where users search for current conditions in different locations.',
+      'The front end uses Bootstrap and jQuery for a clean interface; a PHP back end retrieves data from the OpenWeatherMap API and serves real-time updates.',
+    ],
+    type: 'Web',
+    tech: ['PHP', 'Bootstrap', 'jQuery', 'REST API'],
+    repo: 'https://github.com/shahriarmahmudanik/weather-website',
+  },
+  {
+    slug: 'android-apps',
+    title: 'Android Applications',
+    summary: 'Weather, Calculator and Todo apps built with Java and Android Studio.',
+    description: [
+      'Several Android applications developed in Java with the Android SDK and Android Studio.',
+      'Features include real-time weather retrieval from a RESTful API, calculator operations and task management.',
+    ],
+    type: 'Mobile',
+    tech: ['Java', 'Android SDK', 'Android Studio', 'REST API'],
+    repo: 'https://github.com/shahriarmahmudanik/ToDo_Application',
+    links: [{ label: 'Calculator app', url: 'https://github.com/shahriarmahmudanik/Simple-Calculator_Android-App' }],
+  },
+  {
+    slug: 'student-monitoring-system',
+    title: 'Student Monitoring System',
+    summary: 'A Django system tracking student attendance, grades and performance.',
+    description: [
+      'A student monitoring system with a Python Django back end, a MySQL database and an HTML, CSS, Bootstrap and JavaScript front end.',
+      'It tracks attendance, grades and other data, giving teachers and administrators real-time monitoring and reports generated from database queries and analytics.',
+    ],
+    type: 'Software',
+    tech: ['Python', 'Django', 'MySQL', 'Bootstrap', 'JavaScript'],
   },
 ]
 
-export const projects: Project[] = base.map((p) => ({ ...p, image: p.featured ? p.gallery?.[0] : imageFor(p.slug) }))
+export const projects: Project[] = base.map((p) => ({ ...p, image: p.image ?? (p.featured ? p.gallery?.[0] : imageFor(p.slug) ?? p.gallery?.[0]) }))
 
 export function getProject(slug: string | undefined): Project | undefined {
   return projects.find((p) => p.slug === slug)

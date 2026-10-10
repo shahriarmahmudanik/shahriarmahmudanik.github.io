@@ -19,7 +19,6 @@ export const profile: Profile = {
     { value: 28, label: 'Public GitHub repositories' },
     { value: 'MSc', label: 'Advanced Computer Science' },
   ],
-  // TODO (you): add your earlier education (bachelor's degree, college...) as more entries here, newest first.
   education: [
     {
       degree: 'MSc Advanced Computer Science',
@@ -29,6 +28,18 @@ export const profile: Profile = {
       points: [
         'Postgraduate study in computing, including mobile application development and distributed computing.',
       ],
+    },
+    {
+      degree: 'BSc in Computer Science & Engineering',
+      school: 'Independent University, Bangladesh',
+      dates: '2018 – 2022',
+      points: ['Undergraduate degree in Computer Science and Engineering, including university club activities and organising events.'],
+    },
+    {
+      degree: 'Higher Secondary Certificate (Science)',
+      school: 'Rajbari Govt. College',
+      dates: '2014 – 2016',
+      points: [],
     },
   ],
   experience: [
