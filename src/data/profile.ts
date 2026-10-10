@@ -5,7 +5,7 @@ export const profile: Profile = {
   name: 'Shahriar Mahmud Anik',
   jobTitle: 'Web Developer',
   location: 'Cardiff, United Kingdom',
-  email: 'shahriarmahmud904@gmail.com',
+  email: 'shahriarmahmud.anikk@gmail.com',
   githubUser: 'shahriarmahmudanik',
   roles: ['Web Developer', 'Front-End Developer', 'WordPress Theme & Plugin Developer'],
   intro:
@@ -44,6 +44,16 @@ export const profile: Profile = {
   ],
   experience: [
     {
+      role: 'Head of Tech & Automation Solutions',
+      company: 'AI Alchemy',
+      dates: 'Current',
+      current: true,
+      points: [
+        'Build the systems behind the business: funnels, landing pages, content delivery and lead generation.',
+        'Turn complex tech into seamless automation, keeping everything running smoothly for clients.',
+      ],
+    },
+    {
       role: 'Junior Web Developer',
       company: 'Elegance IT Solution',
       dates: 'Aug 2023 – Jul 2024',
@@ -72,7 +82,7 @@ export const profile: Profile = {
       text: 'Responsive websites built with HTML, CSS, JavaScript and React, with a focus on performance and clean code.',
     },
     {
-      title: 'Custom WordPress websites',
+      title: 'Professional WordPress websites',
       text: 'Hand-coded themes and plugins instead of bloated templates: fast, secure and built around what your business needs.',
     },
     {
