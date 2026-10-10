@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { profile } from '../data/profile'
+import { logoSignature } from '../data/signature'
 import { ScrollProgress } from './ScrollProgress'
+import { Signature } from './Signature'
 
 const items = [
   { id: 'home', label: 'Home', to: '/' },
@@ -32,7 +34,7 @@ export function Header() {
 
   const brand = (
     <Link className="brand" to="/" onClick={() => setOpen(false)} aria-label={`${profile.name} - home`}>
-      Anik
+      <Signature data={logoSignature} stroke={2.4} duration={3.2} />
     </Link>
   )
 

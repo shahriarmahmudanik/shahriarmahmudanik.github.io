@@ -1,6 +1,8 @@
 import { profile } from '../data/profile'
+import { helloSignature } from '../data/signature'
+import { Link } from 'react-router-dom'
+import { Signature } from './Signature'
 import { useSpotlight } from '../hooks/useSpotlight'
-import { useTyping } from '../hooks/useTyping'
 import heroWebp from '../assets/anik-hero.webp'
 import heroJpg from '../assets/anik-hero.jpg'
 import heroMobileWebp from '../assets/anik-hero-mobile.webp'
@@ -21,7 +23,6 @@ function Photo({ alt, lit }: { alt: string; lit?: boolean }) {
 
 export function Hero() {
   const { heroRef, stageRef, dotRef } = useSpotlight()
-  const role = useTyping(profile.roles)
 
   return (
     <section className="hero" id="home" ref={heroRef}>
@@ -32,28 +33,21 @@ export function Hero() {
       </div>
 
       <div className="hero__content wrap">
-        <p className="hero__eyebrow">
-          {profile.jobTitle} · {profile.location}
-        </p>
         <h1 className="hero__title">
-          <span className="script" aria-hidden="true">Hello there!</span>
-          <span className="sr-only">
-            Hello there! I'm {profile.name}, a {profile.jobTitle.toLowerCase()}.
+          <span className="hero__sig" aria-hidden="true">
+            <Signature data={helloSignature} stroke={1.6} duration={2.6} delay={0.3} />
           </span>
+          <span className="sr-only">Hello there! I'm {profile.name}, a {profile.jobTitle.toLowerCase()}.</span>
         </h1>
-        <p className="hero__role" aria-hidden="true">
-          <span>{role}</span>
-          <span className="caret" />
-        </p>
-        <p className="hero__intro">{profile.intro}</p>
-        <p className="hero__cta">
-          <a className="btn btn--primary" href="#projects">View my work</a>
-          <a className="btn" href="#contact">Hire me</a>
+        <p className="hero__intro">
+          I'm {profile.name}, a web developer based in Cardiff. I build fast, custom-coded websites, and my code is where
+          creativity meets precision. Explore my <Link to="/skills">skills</Link>, <Link to="/projects">projects</Link> and
+          journey in <Link to="/about">About</Link>. If we align, let's craft something great together at{' '}
+          <Link to="/hire-me">Hire me</Link>.
         </p>
       </div>
 
       <div className="hero__cursor" ref={dotRef} aria-hidden="true" />
-      <a className="scroll-hint" href="#about" aria-label="Scroll to About"><span /></a>
     </section>
   )
 }
