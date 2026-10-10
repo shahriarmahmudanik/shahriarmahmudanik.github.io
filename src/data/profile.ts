@@ -16,7 +16,7 @@ export const profile: Profile = {
   ],
   stats: [
     { value: 2, suffix: '+', label: 'Years building websites professionally' },
-    { value: 28, label: 'Public GitHub repositories' },
+    { value: 28, live: 'githubRepos', label: 'Public GitHub repositories' },
     { value: 'MSc', label: 'Advanced Computer Science' },
   ],
   education: [
@@ -80,14 +80,17 @@ export const profile: Profile = {
     {
       title: 'Front-end development',
       text: 'Responsive websites built with HTML, CSS, JavaScript and React, with a focus on performance and clean code.',
+      points: ['Responsive, mobile-first layouts', 'React & TypeScript interfaces', 'Accessible, fast-loading pages'],
     },
     {
       title: 'Professional WordPress websites',
       text: 'Hand-coded themes and plugins instead of bloated templates: fast, secure and built around what your business needs.',
+      points: ['Custom themes built from scratch', 'Bespoke plugins and integrations', 'Speed, security and easy editing'],
     },
     {
       title: 'SEO content & blog writing',
       text: 'Clear, search-friendly articles and website copy that bring in the right visitors and read well.',
+      points: ['Keyword-researched blog articles', 'Website and landing-page copy', 'On-page SEO basics'],
     },
   ],
   links: [

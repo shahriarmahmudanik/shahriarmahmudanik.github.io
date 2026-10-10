@@ -3,19 +3,22 @@ import { useInView, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
 import type { Stat } from '../types'
 import { useCountUp } from '../hooks/useCountUp'
+import { useGitHubRepoCount } from '../hooks/useGitHubRepoCount'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
 function StatItem({ stat }: { stat: Stat }) {
+  const repoCount = useGitHubRepoCount(profile.githubUser, typeof stat.value === 'number' ? stat.value : 0, stat.live === 'githubRepos')
+  const value = stat.live === 'githubRepos' ? repoCount : stat.value
   const ref = useRef<HTMLLIElement>(null)
   const inView = useInView(ref, { once: true })
   const reduce = useReducedMotion()
-  const numeric = typeof stat.value === 'number'
-  const count = useCountUp(typeof stat.value === 'number' ? stat.value : 0, inView, 1400, !!reduce)
+  const numeric = typeof value === 'number'
+  const count = useCountUp(typeof value === 'number' ? value : 0, inView, 1400, !!reduce)
   return (
     <li className="stat" ref={ref}>
       <span className="stat__value">
-        {numeric ? count : stat.value}
+        {numeric ? count : value}
         {stat.suffix}
       </span>
       <span className="stat__label">{stat.label}</span>
