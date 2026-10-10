@@ -19,15 +19,19 @@ export const profile: Profile = {
     { value: 28, label: 'Public GitHub repositories' },
     { value: 'MSc', label: 'Advanced Computer Science' },
   ],
-  experience: [
+  // TODO (you): add your earlier education (bachelor's degree, college...) as more entries here, newest first.
+  education: [
     {
-      role: 'MSc Advanced Computer Science',
-      company: 'University of South Wales',
+      degree: 'MSc Advanced Computer Science',
+      school: 'University of South Wales',
       dates: 'Current',
+      current: true,
       points: [
         'Postgraduate study in computing, including mobile application development and distributed computing.',
       ],
     },
+  ],
+  experience: [
     {
       role: 'Junior Web Developer',
       company: 'Elegance IT Solution',

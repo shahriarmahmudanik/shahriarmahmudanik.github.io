@@ -28,6 +28,15 @@ export interface Job {
   role: string
   company: string
   dates: string
+  current?: boolean
+  points: string[]
+}
+
+export interface Education {
+  degree: string
+  school: string
+  dates: string
+  current?: boolean
   points: string[]
 }
 
@@ -46,6 +55,7 @@ export interface Profile {
   intro: string
   about: string[]
   stats: Stat[]
+  education: Education[]
   experience: Job[]
   skills: string[]
   services: Service[]
