@@ -2,6 +2,7 @@ import { profile } from '../data/profile'
 import { helloSignature } from '../data/signature'
 import { Link } from 'react-router-dom'
 import { Signature } from './Signature'
+import { HeroCode } from './HeroCode'
 import { useSpotlight } from '../hooks/useSpotlight'
 import heroWebp from '../assets/anik-hero.webp'
 import heroJpg from '../assets/anik-hero.jpg'
@@ -46,6 +47,8 @@ export function Hero() {
           <Link to="/hire-me">Hire me</Link>.
         </p>
       </div>
+
+      <HeroCode />
 
       <div className="hero__cursor" ref={dotRef} aria-hidden="true" />
     </section>

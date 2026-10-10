@@ -34,7 +34,7 @@ export function Header() {
 
   const brand = (
     <Link className="brand" to="/" onClick={() => setOpen(false)} aria-label={`${profile.name} - home`}>
-      <Signature data={logoSignature} stroke={2.4} duration={3.2} />
+      <Signature data={logoSignature} stroke={1.4} duration={3.4} />
     </Link>
   )
 

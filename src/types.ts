@@ -22,6 +22,7 @@ export interface Stat {
   value: number | string
   suffix?: string
   label: string
+  live?: 'githubRepos' // value is replaced by the live GitHub public repo count
 }
 
 export interface Job {
@@ -43,6 +44,7 @@ export interface Education {
 export interface Service {
   title: string
   text: string
+  points?: string[] // short bullet list shown in the detail panel
 }
 
 export interface Profile {
