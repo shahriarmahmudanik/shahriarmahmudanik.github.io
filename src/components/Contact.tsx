@@ -32,7 +32,7 @@ const ENDPOINT = 'https://api.web3forms.com/submit'
 const ACCESS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ?? '32630133-3dec-4752-bf90-da864964fb18'
 
 export function Contact() {
-  const [values, setValues] = useState<ContactValues>({ name: '', email: '', message: '' })
+  const [values, setValues] = useState<ContactValues>({ name: '', email: '', address: '', message: '' })
   const [trap, setTrap] = useState('') // honeypot: real people never fill this hidden field
   const [errors, setErrors] = useState<ContactErrors>({})
   const [status, setStatus] = useState<Status>('idle')
@@ -56,7 +56,7 @@ export function Contact() {
       const data = (await res.json()) as { success?: boolean }
       if (!res.ok || !data.success) throw new Error(String(res.status))
       setStatus('sent')
-      setValues({ name: '', email: '', message: '' })
+      setValues({ name: '', email: '', address: '', message: '' })
     } catch {
       setStatus('error')
     }
@@ -68,7 +68,7 @@ export function Contact() {
       {key === 'message' ? (
         <textarea id="c-message" rows={5} value={values.message} onChange={set(key)} aria-invalid={!!errors[key]} aria-describedby={errors[key] ? `e-${key}` : undefined} />
       ) : (
-        <input id={`c-${key}`} type={type} value={values[key]} onChange={set(key)} autoComplete={key} aria-invalid={!!errors[key]} aria-describedby={errors[key] ? `e-${key}` : undefined} />
+        <input id={`c-${key}`} type={type} value={values[key]} onChange={set(key)} autoComplete={key === 'address' ? 'street-address' : key} aria-invalid={!!errors[key]} aria-describedby={errors[key] ? `e-${key}` : undefined} />
       )}
       {errors[key] && <span className="field__error" id={`e-${key}`}>{errors[key]}</span>}
     </div>
@@ -97,6 +97,7 @@ export function Contact() {
           <form className="form" onSubmit={onSubmit} noValidate>
             {field('name', 'Your name')}
             {field('email', 'Email', 'email')}
+            {field('address', 'Address (optional)')}
             {field('message', 'Message')}
             <div className="form__trap" aria-hidden="true">
               <label>Leave empty<input tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} /></label>

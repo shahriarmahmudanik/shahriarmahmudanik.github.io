@@ -3,6 +3,7 @@
 export interface ContactValues {
   name: string
   email: string
+  address: string // optional
   message: string
 }
 
