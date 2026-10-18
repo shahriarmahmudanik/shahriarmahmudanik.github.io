@@ -26,8 +26,10 @@ function Icon({ name }: { name: string }) {
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
-// Set VITE_FORM_ENDPOINT (e.g. a Formspree URL) to send real messages. Without it the form opens the visitor's email app.
-const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT as string | undefined
+// Web3Forms forwards each submission to my inbox. The access key is public by design (safe in client code);
+// set VITE_WEB3FORMS_KEY to override it.
+const ENDPOINT = 'https://api.web3forms.com/submit'
+const ACCESS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ?? '32630133-3dec-4752-bf90-da864964fb18'
 
 export function Contact() {
   const [values, setValues] = useState<ContactValues>({ name: '', email: '', message: '' })
@@ -44,20 +46,15 @@ export function Contact() {
     setErrors(found)
     if (Object.keys(found).length > 0 || trap) return
 
-    if (!ENDPOINT) {
-      const body = encodeURIComponent(`${values.message}\n\n${values.name} (${values.email})`)
-      window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent('Portfolio enquiry')}&body=${body}`
-      setStatus('sent')
-      return
-    }
     setStatus('sending')
     try {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, access_key: ACCESS_KEY, subject: `Portfolio enquiry from ${values.name}`, from_name: 'Portfolio website' }),
       })
-      if (!res.ok) throw new Error(String(res.status))
+      const data = (await res.json()) as { success?: boolean }
+      if (!res.ok || !data.success) throw new Error(String(res.status))
       setStatus('sent')
       setValues({ name: '', email: '', message: '' })
     } catch {
@@ -109,7 +106,7 @@ export function Contact() {
             </button>
             <div aria-live="polite">
               {status === 'sent' && <p className="form__notice form__notice--ok">Thanks! Your message is on its way.</p>}
-              {status === 'error' && <p className="form__notice form__notice--err">Something went wrong. Please email me directly instead.</p>}
+              {status === 'error' && <p className="form__notice form__notice--err">Something went wrong. Please email me at <a href={`mailto:${profile.email}`}>{profile.email}</a> instead.</p>}
             </div>
           </form>
         </Reveal>

@@ -4,6 +4,7 @@ import { motion, useInView, useReducedMotion, useScroll, useSpring } from 'frame
 export interface TimelineEntry {
   title: string
   org: string
+  location?: string
   dates: string
   current?: boolean
   points: string[]
@@ -32,6 +33,7 @@ function Entry({ entry, index }: { entry: TimelineEntry; index: number }) {
         </p>
         <h3 className="tl__title">{entry.title}</h3>
         <p className="tl__org">{entry.org}</p>
+        {entry.location && <p className="tl__loc"><span aria-hidden="true">📍</span> {entry.location}</p>}
         <ul className="tl__points">
           {entry.points.map((pt) => (
             <li key={pt}>{pt}</li>

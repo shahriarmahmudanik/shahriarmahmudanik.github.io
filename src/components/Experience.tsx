@@ -4,7 +4,7 @@ import { SectionHeading } from './SectionHeading'
 import { Timeline } from './Timeline'
 
 export function Experience() {
-  const entries = profile.experience.map((j) => ({ title: j.role, org: j.company, dates: j.dates, current: j.current, points: j.points }))
+  const entries = profile.experience.map((j) => ({ title: j.role, org: j.company, location: j.location, dates: j.dates, current: j.current, points: j.points }))
   return (
     <section className="section section--alt" id="experience">
       <div className="wrap">

@@ -4,10 +4,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { projects } from '../data/projects'
 import { profile } from '../data/profile'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
+import { Filmstrip } from '../components/Filmstrip'
 import type { Project } from '../types'
 
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.12 } } }
 const item = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
+
+const featuredSlugs = ['ai-fitness-tracker', 'seek-spirituality', 'ai-alchemy', 'mongstar-music', 'the-whole-woman', 'hvac-bangladesh', 'ecommerce-microservices', 'music-library-api', 'tritech', 'cafe-shop-website']
+const highlights = featuredSlugs.map((slug) => projects.find((p) => p.slug === slug)).filter((p): p is Project => !!p)
 
 export function ProjectsPage() {
   useDocumentTitle(`Projects - ${profile.name}`)
@@ -30,7 +34,11 @@ export function ProjectsPage() {
 
   return (
     <main id="main" className="page-projects">
-      <h1 className="sr-only">Projects</h1>
+      <header className="phead">
+        <p className="phead__label">Selected work</p>
+        <h1>Featured Projects</h1>
+        <p className="phead__lead">A curated selection of web, mobile and software work, from client websites to full-stack applications.</p>
+      </header>
       {featured && (
         <motion.section className="featured" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} aria-label="Featured project">
           <div className="featured__text">
@@ -49,23 +57,29 @@ export function ProjectsPage() {
           </div>
         </motion.section>
       )}
+      <Filmstrip projects={highlights} onOpen={setSelected} />
+      <h2 className="pall">All projects</h2>
       <div className="cat-filters" role="group" aria-label="Filter projects by category">
         {categories.map((c) => (
           <button key={c} type="button" aria-pressed={c === category} className={c === category ? 'is-active' : undefined} onClick={() => setCategory(c)}>
-            {c}
+            {c} <span className="cat-count">{c === 'All' ? projects.length : projects.filter((p) => p.type === c).length}</span>
           </button>
         ))}
       </div>
-      <motion.ul className="masonry" variants={container} initial="hidden" animate="show" key={category}>
-        {shown.map((p) => (
-          <motion.li key={p.slug} variants={item}>
-            <button type="button" data-hover className="tile" onClick={() => setSelected(p)}>
-              <motion.span layoutId={`tile-${p.slug}`} className={`tile__art${p.featured ? ' tile__art--phone' : ''}`}>
+      <motion.ul className="pgrid" variants={container} initial="hidden" animate="show" key={category}>
+        {shown.map((p, i) => (
+          <motion.li key={p.slug} variants={item} className={i === 0 && category === 'All' && shown.length > 3 ? 'pgrid__wide' : undefined}>
+            <button type="button" data-hover className="pcard" onClick={() => setSelected(p)}>
+              <motion.span layoutId={`tile-${p.slug}`} className="pcard__media">
                 {p.image ? <img src={p.image} alt="" loading="lazy" /> : <span className="script">{p.title.charAt(0)}</span>}
+                <span className="pcard__badge">{p.featured ? '★ ' : ''}{p.type}</span>
+                <span className="pcard__view">View project →</span>
               </motion.span>
-              <span className="tile__cat">{p.featured ? '★ Featured · ' : ''}{p.type}</span>
-              <span className="tile__title">{p.title}</span>
-              <span className="tile__tech">{p.tech.join(' · ')}</span>
+              <span className="pcard__body">
+                <span className="pcard__title">{p.title}</span>
+                <span className="pcard__text">{p.summary}</span>
+                <span className="pcard__tech">{p.tech.slice(0, 4).map((t) => <span key={t}>{t}</span>)}</span>
+              </span>
             </button>
           </motion.li>
         ))}

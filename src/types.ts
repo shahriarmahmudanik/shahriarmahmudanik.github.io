@@ -28,6 +28,7 @@ export interface Stat {
 export interface Job {
   role: string
   company: string
+  location?: string
   dates: string
   current?: boolean
   points: string[]

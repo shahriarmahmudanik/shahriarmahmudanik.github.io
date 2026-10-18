@@ -46,6 +46,7 @@ export const profile: Profile = {
     {
       role: 'Head of Tech & Automation Solutions',
       company: 'AI Alchemy',
+      location: 'United Kingdom',
       dates: 'Current',
       current: true,
       points: [
@@ -56,6 +57,7 @@ export const profile: Profile = {
     {
       role: 'Junior Web Developer',
       company: 'Elegance IT Solution',
+      location: 'Bashundhara, Dhaka, Bangladesh',
       dates: 'Aug 2023 – Jul 2024',
       points: [
         'Built unique WordPress websites to client requirements using custom code.',
@@ -65,6 +67,7 @@ export const profile: Profile = {
     {
       role: 'Assistant Executive & Web Developer',
       company: 'Tritech Building Services Ltd.',
+      location: 'Bashundhara, Dhaka, Bangladesh',
       dates: 'May 2022 – Jun 2023',
       points: [
         'Customised WordPress themes and plugins to company requirements.',
