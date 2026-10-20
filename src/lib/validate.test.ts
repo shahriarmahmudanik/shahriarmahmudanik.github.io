@@ -11,10 +11,10 @@ describe('isValidEmail', () => {
 
 describe('validateContact', () => {
   it('returns no errors for valid input', () => {
-    expect(validateContact({ name: 'Anik', email: 'a@b.co', message: 'Hello, nice site!' })).toEqual({})
+    expect(validateContact({ name: 'Anik', email: 'a@b.co', message: 'Hello, nice site!', address: '' })).toEqual({})
   })
   it('returns an error for each bad field', () => {
-    const errors = validateContact({ name: '', email: 'x', message: 'hi' })
+    const errors = validateContact({ name: '', email: 'x', message: 'hi', address: '' })
     expect(Object.keys(errors)).toEqual(['name', 'email', 'message'])
   })
 })
