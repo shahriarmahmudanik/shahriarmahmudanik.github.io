@@ -64,7 +64,7 @@ export function Contact() {
     <section className="section" id="contact">
       <div className="wrap grid-2">
         <div>
-          <SectionHeading label="Contact" title="Let's work together." lead="I'm open to junior front-end and web developer roles in the UK, and to freelance projects." />
+          <SectionHeading label="Contact" title="Let's work together." lead="Have a project or opportunity in mind? Send me the details and I'll reply promptly." />
           <Reveal>
             <ul className="contact-links">
               <li>

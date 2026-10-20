@@ -8,7 +8,7 @@ export function NotFound() {
       <div className="wrap">
         <p className="script script--big">404</p>
         <h1>Page not found</h1>
-        <p className="lead" style={{ marginInline: 'auto' }}>That page doesn't exist.</p>
+        <p className="lead" style={{ marginInline: 'auto' }}>The page you're looking for doesn't exist or has moved.</p>
         <Link className="btn btn--primary" to="/">Back home</Link>
       </div>
     </main>

@@ -64,7 +64,7 @@ export function HirePage() {
             transition={{ duration: 0.6 }}
           >
             <span className="hire-badge__dot" aria-hidden="true" />
-            Available for Web Development & Freelance Projects Roles
+            Available for new web development projects
           </motion.p>
           <h1 className="hire-hero__title" aria-label={headline.join(' ')}>
             {headline.map((w, i) => (
@@ -86,7 +86,7 @@ export function HirePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
           >
-            I build fast, custom-coded websites with WordPress, JavaScript and React. Tell me about your project and I'll get back to you.
+            I design and build fast, custom-coded websites with WordPress, JavaScript and React. Tell me about your project and I'll reply with a clear plan.
           </motion.p>
           <motion.div
             className="hire-hero__cta"

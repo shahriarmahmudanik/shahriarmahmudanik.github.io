@@ -15,9 +15,9 @@ const BLURBS: Record<string, string> = {
 }
 
 const personal = [
-  { title: 'Problem solving', body: 'I break messy problems into small steps and enjoy tracking a bug to its root.' },
-  { title: 'Communication', body: 'I explain technical choices in plain language and keep clients updated.' },
-  { title: 'Fast learner', body: 'Moving from WordPress into React and TypeScript while studying for an MSc.' },
+  { title: 'Problem solving', body: 'I break complex problems into clear steps and track every bug to its root cause.' },
+  { title: 'Communication', body: 'I explain technical decisions in plain language and keep clients informed at every stage.' },
+  { title: 'Adaptability', body: 'I pick up new tools quickly, from WordPress to React and TypeScript, and put them to work on real projects.' },
   { title: 'Attention to detail', body: 'Clean code, accessible interfaces and pages that load quickly.' },
 ]
 
@@ -102,7 +102,7 @@ export function Skills() {
               exit={{ opacity: 0 }}
             >
               <h1 style={{ color }}>{current}</h1>
-              <p>{BLURBS[current] ?? `I use ${current} in my projects and keep learning more about it.`}</p>
+              <p>{BLURBS[current] ?? `${current} is part of my day-to-day toolkit for building reliable websites.`}</p>
             </motion.div>
           </AnimatePresence>
         </>

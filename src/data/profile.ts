@@ -9,10 +9,10 @@ export const profile: Profile = {
   githubUser: 'shahriarmahmudanik',
   roles: ['Web Developer', 'Front-End Developer', 'WordPress Theme & Plugin Developer'],
   intro:
-    "I'm Shahriar Mahmud Anik, a web developer based in Cardiff. I build fast, custom-coded websites with WordPress and JavaScript, and I'm growing into React and TypeScript while studying for an MSc in Advanced Computer Science at the University of South Wales.",
+    "I'm Shahriar Mahmud Anik, a web developer based in Cardiff. I design and build fast, custom-coded websites with WordPress, JavaScript, React and TypeScript, backed by an MSc in Advanced Computer Science at the University of South Wales.",
   about: [
-    'I started as a web developer in 2022, customising WordPress themes and plugins with PHP, HTML, CSS and JavaScript, and went on to build custom WordPress sites from scratch for different clients.',
-    "I'm now moving deeper into front-end engineering: React, TypeScript and modern tooling, alongside my MSc studies in computer science. I care about clean code, accessible interfaces and pages that load quickly.",
+    "I've built websites professionally since 2022: customising WordPress themes and plugins with PHP, HTML, CSS and JavaScript, then delivering bespoke WordPress sites from scratch for clients.",
+    "My focus today is front-end engineering with React, TypeScript and modern tooling, strengthened by my MSc in computer science. I deliver clean code, accessible interfaces and pages that load fast.",
   ],
   stats: [
     { value: 2, suffix: '+', label: 'Years building websites professionally' },
@@ -50,17 +50,17 @@ export const profile: Profile = {
       dates: 'Current',
       current: true,
       points: [
-        'Build the systems behind the business: funnels, landing pages, content delivery and lead generation.',
-        'Turn complex tech into seamless automation, keeping everything running smoothly for clients.',
+        'Own the technology behind the business: funnels, landing pages, content delivery and lead generation.',
+        'Turn complex technology into reliable automation that keeps client operations running smoothly.',
       ],
     },
     {
-      role: 'Junior Web Developer',
+      role: 'Web Developer',
       company: 'Elegance IT Solution',
       location: 'Bashundhara, Dhaka, Bangladesh',
       dates: 'Aug 2023 – Jul 2024',
       points: [
-        'Built unique WordPress websites to client requirements using custom code.',
+        'Delivered bespoke WordPress websites to client requirements, built with hand-written code.',
         'Worked across HTML5, CSS3, JavaScript, PHP, page builders, plugin development and theme development.',
       ],
     },
@@ -71,7 +71,7 @@ export const profile: Profile = {
       dates: 'May 2022 – Jun 2023',
       points: [
         'Customised WordPress themes and plugins to company requirements.',
-        'Maintained the website for performance and security, and ran test plans to find and fix bugs.',
+        'Kept the company website fast and secure, and ran test plans to catch and fix bugs before release.',
       ],
     },
   ],
