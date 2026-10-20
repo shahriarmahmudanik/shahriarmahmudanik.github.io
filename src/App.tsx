@@ -45,7 +45,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {pathname !== '/' && pathname !== '/skills' && pathname !== '/projects' && <Footer />}
+      {pathname !== '/' && <Footer showCta={pathname !== '/hire-me'} />}
     </>
   )
 }

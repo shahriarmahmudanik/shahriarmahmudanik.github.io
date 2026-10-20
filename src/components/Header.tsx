@@ -6,7 +6,7 @@ import { logoSignature } from '../data/signature'
 import { ScrollProgress } from './ScrollProgress'
 import { Signature } from './Signature'
 
-const items = [
+export const items = [
   { id: 'home', label: 'Home', to: '/' },
   { id: 'skills', label: 'Skills', to: '/skills' },
   { id: 'projects', label: 'Projects', to: '/projects' },
