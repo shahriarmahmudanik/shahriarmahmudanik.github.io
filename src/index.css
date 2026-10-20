@@ -796,3 +796,16 @@ body.menu-open { overflow: hidden; }
 .phead, .featured,
 .page-projects .film { margin-bottom: var(--gap); }
 .pall { max-width: 1200px; margin: 0 auto 1rem; text-align: center; font-size: 1.25rem; color: #04202a; }
+
+/* Contact success state */
+.sent { display: grid; justify-items: center; gap: 0.6rem; padding: 2.4rem 1.6rem; text-align: center; border: 1px solid rgba(70, 200, 130, 0.35); border-radius: var(--radius); background: linear-gradient(160deg, rgba(70, 200, 130, 0.1), var(--surface) 60%); }
+.sent__badge { position: relative; display: grid; place-items: center; width: 6rem; height: 6rem; margin-bottom: 0.6rem; }
+.sent__badge svg { width: 100%; height: 100%; overflow: visible; }
+.sent__ring { fill: rgba(70, 200, 130, 0.1); stroke: #46c882; stroke-width: 4; stroke-linecap: round; }
+.sent__tick { fill: none; stroke: #46c882; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+.sent__dot { position: absolute; top: 50%; left: 50%; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--accent-2); pointer-events: none; }
+.sent h3 { margin: 0; font-size: 1.5rem; }
+.sent p { margin: 0; color: var(--muted); }
+.sent__steps { display: grid; gap: 0.5rem; margin: 1rem 0 1.2rem; padding: 0; list-style: none; text-align: left; }
+.sent__steps li { color: var(--text); font-size: 0.95rem; }
+.sent__steps li span { display: inline-grid; place-items: center; width: 1.3rem; height: 1.3rem; margin-right: 0.5rem; border-radius: 50%; font-size: 0.75rem; color: #021016; background: #46c882; }
