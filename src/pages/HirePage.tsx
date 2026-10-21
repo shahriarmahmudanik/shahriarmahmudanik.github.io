@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { HireButton } from '../components/HireButton'
+import { CvButton } from '../components/CvButton'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Contact } from '../components/Contact'
 import { Reveal } from '../components/Reveal'
@@ -94,9 +95,9 @@ export function HirePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.7 }}
           >
-            <a className="btn btn--primary" href="#contact">Start a project</a>
-            <a className="btn" href={`mailto:${profile.email}`}>Email me</a>
-            <Link className="btn" to="/projects">See my work</Link>
+            <HireButton variant="primary" icon="spark" href="#contact">Start a project</HireButton>
+            <HireButton variant="ghost" icon="arrow" to="/projects">See my work</HireButton>
+            <CvButton />
           </motion.div>
         </div>
       </section>

@@ -1,6 +1,8 @@
 import type { Profile } from '../types'
 
 // All the text on the site lives here. Edit this file and the whole site updates.
+export const cvUrl = `${import.meta.env.BASE_URL}Shahriar-Mahmud-Anik-CV.pdf`
+
 export const profile: Profile = {
   name: 'Shahriar Mahmud Anik',
   jobTitle: 'Web Developer',

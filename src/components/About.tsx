@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useInView, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
+import { CvButton } from './CvButton'
 import type { Stat } from '../types'
 import { useCountUp } from '../hooks/useCountUp'
 import { useGitHubRepoCount } from '../hooks/useGitHubRepoCount'
@@ -37,6 +38,9 @@ export function About() {
               <p className="lead">{p}</p>
             </Reveal>
           ))}
+          <p className="hero__cta">
+            <CvButton />
+          </p>
         </div>
         <Reveal delay={0.1}>
           <ul className="stats">

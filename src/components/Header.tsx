@@ -8,9 +8,9 @@ import { Signature } from './Signature'
 
 export const items = [
   { id: 'home', label: 'Home', to: '/' },
+  { id: 'about', label: 'About', to: '/about' },
   { id: 'skills', label: 'Skills', to: '/skills' },
   { id: 'projects', label: 'Projects', to: '/projects' },
-  { id: 'about', label: 'About', to: '/about' },
   { id: 'hire', label: 'Hire me', to: '/hire-me' },
 ]
 
