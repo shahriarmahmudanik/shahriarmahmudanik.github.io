@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState, type PointerEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { profile } from '../data/profile'
+import { CoffeeButton } from './CoffeeButton'
 import { items } from './Header'
 import { Icon } from './Icon'
 
@@ -108,6 +109,7 @@ export function Footer({ showCta = true }: { showCta?: boolean }) {
               <button type="button" className="btn" onClick={copyEmail} aria-live="polite">
                 {copied ? 'Email copied' : 'Copy email'}
               </button>
+              <CoffeeButton />
             </div>
           </motion.section>
         )}

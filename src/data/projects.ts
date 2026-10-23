@@ -14,7 +14,30 @@ const fitness = Object.entries(
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([, url]) => url)
 
+const imageDl = Object.entries(
+  import.meta.glob<string>('../assets/projects/imagedl/*.jpg', { eager: true, query: '?url', import: 'default' }),
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, url]) => url)
+
 const base: Project[] = [
+  {
+    slug: 'image-downloader-pro',
+    title: 'Image Downloader Pro',
+    summary: 'Chrome extension that finds every image on a web page and downloads the ones you pick in one click.',
+    description: [
+      'A Chrome extension (Manifest V3) that scans the current page for images, lets you choose the ones you want and saves them in one click. It finds img tags (including the largest srcset and lazy-load sources), picture elements, CSS backgrounds, SVG images, icons and og:image.',
+      'Results can be filtered by minimum size and file type, and downloads are saved into a folder named after the site. The popup has an animated dark interface with scanning, selection and download-progress effects, and it respects reduced-motion settings. It needs no account, has no tracking and nothing leaves the browser. Published on the Chrome Web Store.',
+    ],
+    type: 'Software',
+    tech: ['JavaScript', 'Chrome Extension', 'Manifest V3', 'HTML', 'CSS'],
+    promo: true,
+    image: shot('image-downloader-pro'),
+    gallery: imageDl,
+    repo: 'https://github.com/shahriarmahmudanik/image-downloader-pro',
+    live: 'https://chromewebstore.google.com/detail/kpihglmcefmhilbnldnigglcghljhene',
+    links: [{ label: 'Privacy policy', url: 'https://shahriarmahmudanik.github.io/image-downloader-pro-privacy/' }],
+  },
   {
     slug: 'ai-fitness-tracker',
     title: 'AI-Powered Fitness Tracker',
@@ -26,6 +49,8 @@ const base: Project[] = [
     type: 'Mobile',
     tech: ['Flutter', 'Dart', 'Python'],
     featured: true,
+    image: shot('ai-fitness-tracker'),
+    promo: true,
     gallery: fitness,
     repo: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application',
     links: [{ label: 'Backend', url: 'https://github.com/shahriarmahmudanik/AI-Powered-Fitness-Tracking-Application-backend' }],

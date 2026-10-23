@@ -1,4 +1,5 @@
 import { HireButton } from '../components/HireButton'
+import { CoffeeSection } from '../components/CoffeeSection'
 import { CvButton } from '../components/CvButton'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Contact } from '../components/Contact'
@@ -165,6 +166,7 @@ export function HirePage() {
       </section>
 
       <Contact />
+      <CoffeeSection />
     </main>
   )
 }

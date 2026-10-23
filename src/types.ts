@@ -12,6 +12,7 @@ export interface Project {
   image?: string // preview picture (set automatically from src/assets/projects/<slug>.svg)
   tech: string[]
   featured?: boolean // shown in the big banner at the top of the Projects page
+  promo?: boolean // the preview image is a wide promo graphic: show it whole on the project card
   gallery?: string[] // extra screenshots
   links?: { label: string; url: string }[] // extra links, e.g. a backend repo
   repo?: string // "?" means optional

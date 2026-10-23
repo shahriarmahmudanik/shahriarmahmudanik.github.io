@@ -10,7 +10,7 @@ import type { Project } from '../types'
 const container = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.12 } } }
 const item = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }
 
-const featuredSlugs = ['ai-fitness-tracker', 'seek-spirituality', 'ai-alchemy', 'mongstar-music', 'the-whole-woman', 'hvac-bangladesh', 'ecommerce-microservices', 'music-library-api', 'tritech', 'cafe-shop-website']
+const featuredSlugs = ['image-downloader-pro', 'ai-fitness-tracker', 'seek-spirituality', 'ai-alchemy', 'mongstar-music', 'the-whole-woman', 'hvac-bangladesh', 'ecommerce-microservices', 'music-library-api', 'tritech', 'cafe-shop-website']
 const highlights = featuredSlugs.map((slug) => projects.find((p) => p.slug === slug)).filter((p): p is Project => !!p)
 
 export function ProjectsPage() {
@@ -70,7 +70,7 @@ export function ProjectsPage() {
         {shown.map((p, i) => (
           <motion.li key={p.slug} variants={item} className={i === 0 && category === 'All' && shown.length > 3 ? 'pgrid__wide' : undefined}>
             <button type="button" data-hover className="pcard" onClick={() => setSelected(p)}>
-              <motion.span layoutId={`tile-${p.slug}`} className="pcard__media">
+              <motion.span layoutId={`tile-${p.slug}`} className={`pcard__media${p.promo ? ' pcard__media--promo' : ''}`}>
                 {p.image ? <img src={p.image} alt="" loading="lazy" /> : <span className="script">{p.title.charAt(0)}</span>}
                 <span className="pcard__badge">{p.featured ? '★ ' : ''}{p.type}</span>
                 <span className="pcard__view">View project →</span>
